@@ -47,6 +47,15 @@ console.log(a)
 let a = 3; 
 ```
 
+# Arrays
+Both definition are the same:
+
+```javascript
+let numbers: number[12,2,23];
+let another_number_list: Array<number> = [18,21,2555];
+```
+
+
 # Interfaces
 We can define how the functionalities should be moduled
 It is similar to a class, but without any kind of data in the interface
@@ -65,6 +74,15 @@ class House {
 }
 
 let myHouse = House;
+```
+Moreover we don't need to have the properties of an object defined in the class, but we can define it into its constructor:
+
+```javascript
+class ObjectGeneric<TYPE1>{
+    constructor(private itsValue: TYPE1){
+        //do something..
+    }
+}
 ```
 
 # Installation

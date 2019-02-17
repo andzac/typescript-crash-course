@@ -26,3 +26,17 @@ function displayData<TYPE>(somedata: TYPE){
 
 console.log(displayData(333232322));
 console.log(displayData('Helloo'));
+
+class ObjectGeneric<TYPE1>{
+    constructor(private itsValue: TYPE1){
+
+    }
+}
+
+
+let myObjectGeneric1 = new ObjectGeneric("STRING");
+let myObjectGeneric2 = new ObjectGeneric(22);
+
+//we can also be restrictive about accepted type
+let myObjectGeneric3 = new ObjectGeneric<string>("ANOTHER STRING");
+
