@@ -8,6 +8,20 @@
     <script src="class_inhrt.js"></script>
 </head>
 <body>
-    
+    <script>
+        var myNamespace = (function(){
+            /* everything I'll define here it will be available
+               only using this namespace.
+            */
+
+            return {
+                displayData: function(){
+                    console.log('I am inside a namespace!')
+                }
+            }
+        })();
+
+        myNamespace.displayData();
+    </script>
 </body>
 </html>

@@ -55,7 +55,6 @@ let numbers: number[12,2,23];
 let another_number_list: Array<number> = [18,21,2555];
 ```
 
-
 # Interfaces
 We can define how the functionalities should be moduled
 It is similar to a class, but without any kind of data in the interface
@@ -113,4 +112,48 @@ live-server
 2. invoke from the terminal:
 ```bash
 node <file_without_extension>
+```
+
+# Namespaces
+Are used to define a specific module and protect its properties from the global variables, because those properties should be accessible only from the namespace or using an export
+
+```javascript
+namespace myNamespace {
+
+    //I need to export the function to use it outside the namespace..
+    export function displayData(){
+        return 'I am inside a ts namespace';
+    }
+}
+
+console.log(myNamespace.displayData());
+```
+
+To use the namespace values outside we need to define a new file and attach a reference to the specific namespace
+
+```javascript
+///<reference path="moduleOne.ts"/>
+console.log(myNamespace.displayData());
+```
+
+Then compile it in the proper way (with the flag option --outFile):
+
+```bash
+tsc outside_file --outFile outside_file.js
+```
+
+Looking to the js implementation is possible see that the namespace property is added to the outside_file.js
+
+```javascript
+var myNamespace;
+(function (myNamespace) {
+    myNamespace.text = 'I am inside a ts namespace';
+    //I need to export the function to use it outside the namespace..
+    function displayData() {
+        return myNamespace.text;
+    }
+    myNamespace.displayData = displayData;
+})(myNamespace || (myNamespace = {}));
+///<reference path="moduleOne.ts"/>
+console.log(myNamespace.displayData());
 ```
