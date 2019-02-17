@@ -26,7 +26,16 @@ var ObjectGeneric = /** @class */ (function () {
     }
     return ObjectGeneric;
 }());
+var ObjectGenericWithConstrain = /** @class */ (function () {
+    function ObjectGenericWithConstrain(itsValue) {
+        this.itsValue = itsValue;
+    }
+    return ObjectGenericWithConstrain;
+}());
 var myObjectGeneric1 = new ObjectGeneric("STRING");
 var myObjectGeneric2 = new ObjectGeneric(22);
 //we can also be restrictive about accepted type
 var myObjectGeneric3 = new ObjectGeneric("ANOTHER STRING");
+//with a constrain in the constructor I cannot assign whatever I want as parameter..
+//let myObjectGeneric4 = new ObjectGenericWithConstrain(10); //wrong
+var myObjectGeneric4 = new ObjectGenericWithConstrain("OKK");
