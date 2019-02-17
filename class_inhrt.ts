@@ -1,8 +1,17 @@
-class Building {
-    escalator(){
-        console.log('escalator is moving');
+abstract class Structure {
+    build(){
+        console.log('Struct is built');
+    }
+}
+
+
+
+class Building extends Structure {
+    startLights(){
+        console.log('lights is on');
     }
 }
 
 let myBuilding = new Building;
-myBuilding.escalator();
+myBuilding.build();
+myBuilding.startLights();
