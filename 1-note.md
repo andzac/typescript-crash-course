@@ -61,7 +61,7 @@ Without a constructor method, is possible define an instance of a class without 
 
 ```javascript
 class House {
-    private sayHello('Hi from the house!");
+    private sayHello('Hi from the house!');
 }
 
 let myHouse = House;
