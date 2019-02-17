@@ -56,6 +56,17 @@ It's just a definition (no methods) of a module
 Are function that are invoked with a prefixed '@'
 We can decorate classes, methods, properties and parameters with a decorator that return the same data as in input of it but it has been argument in some way.
 
+# Constructor
+Without a constructor method, is possible define an instance of a class without parenthesis.
+
+```javascript
+class House {
+    private sayHello('Hi from the house!");
+}
+
+let myHouse = House;
+```
+
 # Installation
 ```bash
 npm install -g typescript
