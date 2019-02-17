@@ -78,3 +78,21 @@ We can use the -w option to watch the file and transpile in js all the time that
 ```bash
 tsc -w example.ts
 ```
+
+# Lunch Live server
+In order to run a live instance of Node with our ts contribution we need to:
+
+1. compile the required ts in js file
+2. create an index.html with a script tag with the src of required js files.
+3. invoke from the terminal:
+
+```bash
+live-server
+```
+
+# Test from terminal
+1. compile the required ts in js file
+2. invoke from the terminal:
+```bash
+node <file_without_extension>
+```
